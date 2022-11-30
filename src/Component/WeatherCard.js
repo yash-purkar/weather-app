@@ -62,8 +62,7 @@ const WeatherCard = ({ tempInfo }) => {
       {/* temp card */}
       <article className='widget'>
         <div className="weatherIcon">
-          {/* <i className={"wi wi-day-sunny"}></i> */}
-          {/* Use icon here instead of img */}
+
           <img src={weatherIcon} alt="Icon" className='icon' />
         </div>
 
@@ -121,7 +120,7 @@ const WeatherCard = ({ tempInfo }) => {
 
           <div className="two_cols third">
             <p className='img'>
-              {/* <i></i> */}
+
               <img src={pressureIcon} alt="Icon" className='icons' />
             </p>
             <p className="extra_info_left">

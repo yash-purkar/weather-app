@@ -23,7 +23,7 @@ body {
   border-top-left-radius: 0.3rem;
   border-bottom-left-radius: 0.3rem;
   outline-color: blueviolet;
-  outline-width: 0.5px;
+  outline-width: 0.2px;
 }
 
 .searchBtn {
@@ -117,4 +117,37 @@ body {
   padding-top: 5px;
 }
 
-/* } */
+@media only screen and (min-width: 600px) {
+  body {
+    width: 600px;
+    margin: 50px auto;
+    border: 1px solid blueviolet;
+    border-radius: 1rem;
+    margin-top: 100px;
+  }
+  .widget {
+    width: 400px;
+    margin: 50px auto;
+  }
+  .mid_container {
+    border-radius: 1rem;
+  }
+  .date {
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+  }
+
+  .icon {
+    width: 80px;
+  }
+  .temperature {
+    font-size: 20px;
+  }
+  .description {
+    font-size: 20px;
+  }
+  .date {
+    font-size: 19px;
+    align-self: auto;
+  }
+}
