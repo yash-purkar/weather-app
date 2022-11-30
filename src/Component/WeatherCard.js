@@ -1,7 +1,14 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import todo from './to_do.svg'
+import sunny from './Icons/sunny.svg'
+import rainy from './Icons/rainy.svg'
+import cloudy from './Icons/cloudy.svg'
+import air from './Icons/air.svg'
+import haze from './Icons/haze.svg'
 
 const WeatherCard = ({ tempInfo }) => {
+  const [weatherIcon, setWeatherIcon] = useState("")
+
   const {
     temp,
     humidity,
@@ -12,6 +19,35 @@ const WeatherCard = ({ tempInfo }) => {
     country,
     sunset
   } = tempInfo;
+
+  useEffect(() => { //
+    if (weatherMood) {  //If we got weatherMood data
+      switch (weatherMood) {
+        case "Clouds": setWeatherIcon(cloudy);
+          break;
+
+        case "Haze": setWeatherIcon(haze);
+          break;
+
+        case "Clear": setWeatherIcon(sunny);
+          break;
+
+        case "Mist": setWeatherIcon(air);
+          break;
+
+        case "Smoke": setWeatherIcon(air);
+          break;
+
+        case "Rainy": setWeatherIcon(rainy);
+          break;
+
+        default: setWeatherIcon(sunny);
+          break;
+      }
+    }
+  }, [weatherMood]);
+  // It will run only that time when the weatherMood value will change;
+
 
   // The sunset is coming in seconds
   let sec = sunset;
@@ -25,7 +61,7 @@ const WeatherCard = ({ tempInfo }) => {
         <div className="weatherIcon">
           {/* <i className={"wi wi-day-sunny"}></i> */}
           {/* Use icon here instead of img */}
-          <img src={todo} alt="" style={{ width: "150px" }} />
+          <img src={weatherIcon} alt="" style={{ width: "150px" }} />
         </div>
 
         <div className="weatherInfo">
