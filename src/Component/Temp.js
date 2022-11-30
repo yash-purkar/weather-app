@@ -9,9 +9,7 @@ const Temp = () => {
   const getWeatherInfo = async () => {
 
     try {
-      const url = `https://api.openweathermap.org/data/2.5/weather?q=${searchValue}&units=metric&appid=2d9f020388f73c365b0cc6457b04233e`;
-
-
+      const url = `https://api.openweathermap.org/data/2.5/weather?q=${searchValue}&units=metric&appid=2d9f020388f73c365b0cc6457b04233b`;
 
       const res = await fetch(url);
       const data = await res.json();
@@ -34,14 +32,11 @@ const Temp = () => {
         country,
         sunset
       };
-
       setTempInfo(weatherInfo);
 
     } catch (error) {
       alert("NotFound")
     }
-
-
   }
 
   useEffect(() => {

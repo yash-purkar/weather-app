@@ -61,7 +61,8 @@ const WeatherCard = ({ tempInfo }) => {
         <div className="weatherIcon">
           {/* <i className={"wi wi-day-sunny"}></i> */}
           {/* Use icon here instead of img */}
-          <img src={weatherIcon} alt="" style={{ width: "150px" }} />
+          {/* <img src={weatherIcon} alt="" style={{ width: "150px" }} /> */}
+          <img src={sunny} alt="" style={{ width: "150px" }} />
         </div>
 
         <div className="weatherInfo">
@@ -102,7 +103,7 @@ const WeatherCard = ({ tempInfo }) => {
           <div className="two_side_section">
             <p>
               {/* <i></i> */}
-              <img src={todo} alt="" style={{ width: "75px" }} />
+              <img src={todo} alt="" className='weatherIcon' style={{ width: "75px" }} />
             </p>
             <p className="extra_info_left">
               {humidity} <br />
