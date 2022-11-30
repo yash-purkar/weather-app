@@ -16,6 +16,19 @@ body {
   margin-top: 50px;
 }
 
+.main {
+  border: 1px solid blueviolet;
+  padding: 15px;
+  border-radius: 1rem;
+}
+
+h1 {
+  color: blueviolet;
+  text-align: center;
+  margin: 50px;
+  letter-spacing: 1px;
+}
+
 #searchItem {
   outline: dotted;
   border: none;
@@ -118,12 +131,16 @@ body {
 }
 
 @media only screen and (min-width: 600px) {
-  body {
+  .main {
     width: 600px;
     margin: 50px auto;
     border: 1px solid blueviolet;
     border-radius: 1rem;
-    margin-top: 100px;
+    margin-top: 50px;
+    letter-spacing: 0.5px;
+  }
+  h1 {
+    letter-spacing: 1.5px;
   }
   .widget {
     width: 400px;

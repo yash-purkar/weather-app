@@ -9,7 +9,7 @@ const Temp = () => {
   const getWeatherInfo = async () => {
 
     try {
-      const url = `https://api.openweathermap.org/data/2.5/weather?q=${searchValue}&units=metric&appid=2d9f020388f73c365b0cc6457b04233e`;
+      const url = `https://api.openweathermap.org/data/2.5/weather?q=${searchValue}&units=metric&appid=2d9f020388f73c365b0cc6457b04233b`;
 
       const res = await fetch(url);
       const data = await res.json();
@@ -45,22 +45,24 @@ const Temp = () => {
 
   return (
     <>
-      <div className='wrap'>
-        <div className="search">
-          <input type="search"
-            value={searchValue}
-            onChange={(e) => setSearchValue(e.target.value)}
-            placeholder='plz enter your city name
+      <h1>WEATHER APP</h1>
+      <div className="main">
+        <div className='wrap'>
+          <div className="search">
+            <input type="search"
+              value={searchValue}
+              onChange={(e) => setSearchValue(e.target.value)}
+              placeholder='plz enter your city name
            ' name=""
-            id="searchItem" autoFocus />
+              id="searchItem" autoFocus />
 
-          <button onClick={getWeatherInfo} className="searchBtn" type='button'>Search</button>
+            <button onClick={getWeatherInfo} className="searchBtn" type='button'>Search</button>
+          </div>
         </div>
+
+
+        <WeatherCard tempInfo={tempInfo} />
       </div>
-
-
-      <WeatherCard tempInfo={tempInfo} />
-
     </>
   )
 }
