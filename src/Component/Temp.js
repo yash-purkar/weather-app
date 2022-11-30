@@ -1,20 +1,43 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import todo from './to_do.svg'
 
 
 const Temp = () => {
+  const [searchValue, setSearchValue] = useState("pune");
 
+  const getWeatherInfo = async () => {
+
+    try {
+      const url = `https://api.openweathermap.org/data/2.5/weather?q=${searchValue}&units=metric&appid=2d9f020388f73c365b0cc6457b04233e`;
+
+
+      const res = await fetch(url);
+      const data = await res.json();
+
+
+    } catch (error) {
+      alert("NotFound")
+    }
+
+
+  }
+
+  useEffect(() => {
+    getWeatherInfo()
+  }, [])
 
   return (
     <>
       <div className='wrap'>
         <div className="search">
           <input type="search"
+            value={searchValue}
+            onChange={(e) => setSearchValue(e.target.value)}
             placeholder='plz enter your city name
            ' name=""
             id="searchItem" autoFocus />
 
-          <button className="searchBtn" type='button'>Search</button>
+          <button onClick={getWeatherInfo} className="searchBtn" type='button'>Search</button>
         </div>
       </div>
 
