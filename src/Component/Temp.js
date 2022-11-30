@@ -14,6 +14,13 @@ const Temp = () => {
       const res = await fetch(url);
       const data = await res.json();
 
+      // console.log(data.main.temp);
+      const { temp, humidity, pressure } = data.main;
+      const { main: weatherMood } = data.weather[0];
+      const { name: cityName } = data;
+      const { country, sunset } = data.sys;
+      console.log(temp, humidity, pressure, weatherMood, cityName, country, sunset);
+
 
     } catch (error) {
       alert("NotFound")
