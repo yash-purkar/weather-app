@@ -35,7 +35,7 @@ const Temp = () => {
       setTempInfo(weatherInfo);
 
     } catch (error) {
-      alert(`${searchValue.toUpperCase()} not found try to search your district.`)
+      alert(`${searchValue.toUpperCase()} not found try to search your district, or try again later.`)
     }
   }
 
