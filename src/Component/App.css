@@ -12,6 +12,10 @@ body {
   overflow: hidden;
 }
 
+.wrap {
+  margin-top: 50px;
+}
+
 #searchItem {
   outline: dotted;
   border: none;
