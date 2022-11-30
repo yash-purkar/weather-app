@@ -17,9 +17,8 @@ body {
 }
 
 .main {
-  border: 1px solid blueviolet;
+  border-top: 1px solid blueviolet;
   padding: 15px;
-  border-radius: 1rem;
 }
 
 h1 {
