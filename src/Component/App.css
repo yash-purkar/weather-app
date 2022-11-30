@@ -1,18 +1,25 @@
 * {
   margin: 0px;
   padding: 0px;
+  box-sizing: content-box;
 }
-
+body {
+  overflow: hidden;
+}
+/* @media only screen and (max-width: 600px) { */
 body {
   background-color: aliceblue;
+  overflow: hidden;
 }
 
 #searchItem {
-  outline: none;
+  outline: dotted;
   border: none;
   padding: 0.5rem;
   border-top-left-radius: 0.3rem;
   border-bottom-left-radius: 0.3rem;
+  outline-color: blueviolet;
+  outline-width: 0.5px;
 }
 
 .searchBtn {
@@ -20,15 +27,90 @@ body {
   background-color: blueviolet;
   color: white;
   padding: 0.5rem;
+  letter-spacing: 1px;
   border-top-right-radius: 0.3rem;
   border-bottom-right-radius: 0.3rem;
 }
 
-.search {
-  /* border: 1px solid black; */
-  margin: 30px;
+.searchBtn:hover {
+  cursor: pointer;
 }
 
-.widget {
-  border: 1px solid blue;
+.search {
+  display: flex;
+  justify-content: center;
+  margin: 25px 0px;
 }
+/*  */
+.weatherIcon {
+  /* border: 1px solid black; */
+  display: flex;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.mid_container {
+  /* border: 1px solid blue; */
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  background-color: black;
+  height: 90px;
+  /* text-align: center; */
+  /* align-content: center; */
+  color: white;
+  margin-bottom: 30px;
+}
+
+.temperature {
+  align-self: center;
+  padding: 15px;
+  padding-right: 8px;
+  font-size: 15px;
+}
+.description {
+  align-self: center;
+  padding: 15px 20px 15px 0px;
+  font-size: 15px;
+}
+.date {
+  align-self: center;
+  padding: 15px;
+  background-color: blueviolet;
+  font-size: 15px;
+  height: 60px;
+}
+
+/* four columns */
+.extra_temp {
+  /* border: 1px solid black; */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-content: center;
+  justify-content: center;
+  width: fit-content;
+  margin: auto;
+}
+
+.two_cols {
+  padding: 5px 30px;
+  display: flex;
+  font-size: 13.5px;
+  margin-bottom: 15px;
+}
+
+.icons {
+  color: pink;
+  width: 30px;
+  padding: 5px;
+}
+
+.img {
+  /* border: 1px solid red; */
+  padding-right: 2px;
+}
+
+.extra_info_left {
+  padding-top: 5px;
+}
+
+/* } */

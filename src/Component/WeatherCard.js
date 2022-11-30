@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react'
-import todo from './to_do.svg'
 import sunny from './Icons/sunny.svg'
 import rainy from './Icons/rainy.svg'
 import cloudy from './Icons/cloudy.svg'
 import air from './Icons/air.svg'
 import haze from './Icons/haze.svg'
+import sunsetIcon from './Icons/sunset.svg'
+import humidityIcon from "./Icons/humidity.svg"
+import pressureIcon from "./Icons/pressure.svg"
+import speedIcon from "./Icons/speed.svg"
 
 const WeatherCard = ({ tempInfo }) => {
   const [weatherIcon, setWeatherIcon] = useState("")
@@ -61,11 +64,12 @@ const WeatherCard = ({ tempInfo }) => {
         <div className="weatherIcon">
           {/* <i className={"wi wi-day-sunny"}></i> */}
           {/* Use icon here instead of img */}
-          {/* <img src={weatherIcon} alt="" style={{ width: "150px" }} /> */}
-          <img src={sunny} alt="" style={{ width: "150px" }} />
+          <img src={weatherIcon} alt="Icon" className='icon' />
         </div>
 
-        <div className="weatherInfo">
+        <div className="mid_container">
+
+
           <div className="temperature">
             <span>{temp} &deg;</span>
           </div>
@@ -78,45 +82,47 @@ const WeatherCard = ({ tempInfo }) => {
 
             <div className="place">{cityName}, {country}</div>
           </div>
+
+
+          <div className="date">
+            {new Date().toLocaleString()}
+          </div>
         </div>
 
-        <div className="date">
-          {new Date().toLocaleString()}
-        </div>
+
 
         {/* Four column section */}
         <div className="extra_temp">
-          <div className="temp_info">
-            <div className="two_side_section">
-              <p>
-                {/* <i></i> */}
-                <img src={todo} alt="" style={{ width: "75px" }} />
-              </p>
-              <p className="extra_info_left">
-                {timeStr} PM<br />
-                Sunset
-              </p>
-            </div>
+
+          <div className="two_cols first">
+            <p className='img'>
+              {/* <i></i> */}
+              <img src={sunsetIcon} alt="Icon" className='icons' />
+            </p>
+            <p className="extra_info_left">
+              {timeStr}PM<br />
+              Sunset
+            </p>
           </div>
 
 
-          <div className="two_side_section">
-            <p>
+          <div className="two_cols second">
+            <p className='img'>
               {/* <i></i> */}
-              <img src={todo} alt="" className='weatherIcon' style={{ width: "75px" }} />
+              <img src={humidityIcon} alt="Icon" className='icons' />
             </p>
             <p className="extra_info_left">
               {humidity} <br />
               Humidity
             </p>
           </div>
-        </div>
 
-        <div className="weather_extra_info">
-          <div className="two_side_section">
-            <p>
+
+
+          <div className="two_cols third">
+            <p className='img'>
               {/* <i></i> */}
-              <img src={todo} alt="" style={{ width: "75px" }} />
+              <img src={pressureIcon} alt="Icon" className='icons' />
             </p>
             <p className="extra_info_left">
               {pressure} <br />
@@ -124,10 +130,10 @@ const WeatherCard = ({ tempInfo }) => {
             </p>
           </div>
 
-          <div className="two_side_section">
-            <p>
+          <div className="two_cols fourth">
+            <p className='img'>
               {/* <i></i> */}
-              <img src={todo} alt="" style={{ width: "75px" }} />
+              <img src={speedIcon} alt="Icon" className='icons' />
             </p>
             <p className="extra_info_left">
               {speed} <br />
@@ -135,7 +141,6 @@ const WeatherCard = ({ tempInfo }) => {
             </p>
           </div>
         </div>
-
       </article>
     </>
   )
